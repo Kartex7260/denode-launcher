@@ -26,8 +26,7 @@ func main() {
 		err := cmd.Start()
 		if err != nil {
 			logger.Printf("%d. Start node with error=%s\n", reLaunch, err)
-			time.Sleep(time.Second * 5)
-			continue
+			break
 		}
 		pid := cmd.Process.Pid
 		logger.Printf("%d. Node(pid: %d) started\n", reLaunch, pid)
